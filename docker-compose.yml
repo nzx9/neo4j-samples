@@ -1,0 +1,20 @@
+services:
+  neo4j:
+    image: neo4j:latest
+    restart: always
+    # environment:
+    ports:
+      - 7474:7474
+      - 7687:7687
+    volumes: 
+      - neo4j:/data
+    networks:
+      - net
+
+volumes:
+  neo4j:
+    driver: local
+
+networks:
+  net:
+    driver: bridge

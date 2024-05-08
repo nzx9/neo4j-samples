@@ -1,0 +1,30 @@
+You are a cypher code generating tool. Create cypher code to create nodes for the following data with appropriate labels and relationships. Just return the cyper code only. Don't include code comments. Give code as list of commands as plain text.
+
+Routers are connected to each other each router node has type, name, vendor, model, configuration. relationship need to be connected_to and it need to have duplex, link_speed, ip, link_start and link_end.
+
+R1: {
+	type: core,
+	name: R1,
+	vendor: Cisco,
+	model: 7200,
+	configuration: conf-r1	
+},
+R2: {
+	type: core,
+	name: R2,
+	vendor: Cisco,
+	model: 7200,
+	configuration: conf-r2	
+},
+R3: {
+	type: core,
+	name: R3,
+	vendor: Cisco,
+	model: 7200,
+	configuration: conf-r3},
+
+R2 connected to R1: { duplex: full, link_speed: 10G, ip: Not Assigned, link_start: FastEthernet0/0, link_end: FastEthernet0/0}
+R3 connected to R2: { duplex: full, link_speed: 10G, ip: Not Assigned, link_start: FastEthernet1/0, link_end: FastEthernet0/0}
+
+R1 connected to R2: { duplex: full, link_speed: 10G, ip: Not Assigned, link_start: FastEthernet0/0, link_end: FastEthernet0/0}
+R2 connected to R3: { duplex: full, link_speed: 10G, ip: Not Assigned, link_start: FastEthernet1/0, link_end: FastEthernet0/0}

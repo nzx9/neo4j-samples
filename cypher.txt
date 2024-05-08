@@ -1,0 +1,9 @@
+CREATE (R1:Router {type:"core", name:"R1", vendor:"Cisco", model:"7200", configuration:"conf-r1"})
+CREATE (R2:Router {type:"core", name:"R2", vendor:"Cisco", model:"7200", configuration:"conf-r2"})
+CREATE (R3:Router {type:"core", name:"R3", vendor:"Cisco", model:"7200", configuration:"conf-r3"})
+
+CREATE (R2)-[:CONNECTED_TO {duplex:"full", link_speed:"10G", ip:"Not Assigned", link_start:"FastEthernet0/0", link_end:"FastEthernet0/0"}]->(R1)
+CREATE (R3)-[:CONNECTED_TO {duplex:"full", link_speed:"10G", ip:"Not Assigned", link_start:"FastEthernet1/0", link_end:"FastEthernet0/0"}]->(R2)
+
+CREATE (R1)-[:CONNECTED_TO {duplex:"full", link_speed:"10G", ip:"Not Assigned", link_start:"FastEthernet0/0", link_end:"FastEthernet0/0"}]->(R2)
+CREATE (R2)-[:CONNECTED_TO {duplex:"full", link_speed:"10G", ip:"Not Assigned", link_start:"FastEthernet1/0", link_end:"FastEthernet0/0"}]->(R3)
